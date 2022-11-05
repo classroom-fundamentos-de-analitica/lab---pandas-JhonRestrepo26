@@ -21,8 +21,8 @@ def pregunta_01():
     Rta/
     40
 
-    """
-    return
+    """    
+    return tbl0.shape[0]
 
 
 def pregunta_02():
@@ -32,8 +32,9 @@ def pregunta_02():
     Rta/
     4
 
-    """
-    return
+    """    
+    return tbl0.shape[1]
+
 
 
 def pregunta_03():
@@ -49,8 +50,8 @@ def pregunta_03():
     E    14
     Name: _c1, dtype: int64
 
-    """
-    return
+    """   
+    return tbl0.groupby("_c1")["_c1"].count()
 
 
 def pregunta_04():
@@ -64,8 +65,8 @@ def pregunta_04():
     D    3.833333
     E    4.785714
     Name: _c2, dtype: float64
-    """
-    return
+    """    
+    return tbl0.groupby("_c1")["_c2"].mean()
 
 
 def pregunta_05():
@@ -82,7 +83,8 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    
+    return tbl0.groupby("_c1")['_c2'].agg(max)
 
 
 def pregunta_06():
@@ -94,7 +96,7 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    return 
 
 
 def pregunta_07():
