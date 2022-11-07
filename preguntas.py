@@ -232,4 +232,4 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    return pd.merge(tbl0,tbl2,how="left").groupby('_c1').agg({'_c5b': lambda x: sum(x)})
