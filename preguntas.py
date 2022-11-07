@@ -203,7 +203,7 @@ def pregunta_12():
     39   39                    ggg:3,hhh:8,jjj:5
     """
     def f(l1,l2):
-    return ",".join(sorted([str(l1[i])+":"+str(l2[i]) for i in range(len(l1))],key=str))
+        return ",".join(sorted([str(l1[i])+":"+str(l2[i]) for i in range(len(l1))],key=str))
 
     p1=tbl2.groupby('_c0').agg({'_c5a': lambda x: list(x)})
     p2=tbl2.groupby('_c0').agg({'_c5b': lambda x:[str(i)for i in x]})
