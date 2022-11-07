@@ -184,8 +184,8 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    a=tbl1.groupby('_c0').agg({'_c4': lambda x: sorted(list(x))}).agg({'_c4': lambda x: ",".join(x)})
-    answer11=a.reset_index()
+    p1=tbl1.groupby('_c0').agg({'_c4': lambda x: sorted(list(x))}).agg({'_c4': lambda x: ",".join(x)})
+    answer11=p1.reset_index()
 
     return answer11
 
@@ -213,8 +213,8 @@ def pregunta_12():
     p1['_c5b']=p2._c5b
     p1['_c5']=p1.apply(lambda x: f(x._c5a,x._c5b),axis=1)
 
-    a=p1.filter(items=["_c5","_c0"])
-    answer12 = a.reset_index()    
+    p1=p1.filter(items=["_c5","_c0"])
+    answer12 = p1.reset_index()    
     return answer12
 
 
@@ -232,4 +232,6 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return pd.merge(tbl0,tbl2,how="left").groupby('_c1').agg({'_c5b': lambda x: sum(x)})
+    p1=pd.merge(tbl0,tbl2,how="left").groupby('_c1').agg({'_c5b': lambda x: sum(x)})
+    
+    return p1._c5b
